@@ -15,14 +15,14 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 3)upgrading packages\n$(tput sgr0)" \
 && sudo apt update \
 && sudo apt upgrade -y \
-&& sudo apt install -y wget \
+&& sudo apt install -y curl \
 && echo -e "\n$(tput setaf 2)packages upgraded\n$(tput sgr0)" \
 && sleep 3 \
 && sudo -v \
 
 # apt common package installation
 && echo -e "\n$(tput setaf 3)installing packages\n$(tput sgr0)" \
-&& wget -O /tmp/rclone.deb https://downloads.rclone.org/rclone-current-linux-amd64.deb \
+&& curl -fLo /tmp/rclone.deb https://downloads.rclone.org/rclone-current-linux-amd64.deb \
 && sudo apt update \
 && sudo apt install -y bash-completion checkinstall curl figlet flatpak git gnome-software-plugin-flatpak keepassxc lm-sensors neofetch nmap qrencode rsync ufw xclip /tmp/rclone.deb \
 && echo -e "\n$(tput setaf 2)packages installed\n$(tput sgr0)" \
@@ -31,7 +31,7 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 
 # Signal repository configuration and installation
 && echo -e "\n$(tput setaf 3)adding Signal repo\n$(tput sgr0)" \
-&& wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null \
+&& curl -fL https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null \
 && echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | sudo tee /etc/apt/sources.list.d/signal.list > /dev/null \
 && echo -e "\n$(tput setaf 2)Signal repo added\n$(tput sgr0)" \
 && sleep 3 \
@@ -43,7 +43,7 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 
 # Tor repository configuration and installation
 && echo -e "\n$(tput setaf 3)adding Tor repo\n$(tput sgr0)" \
-&& wget -O- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | sudo tee /usr/share/keyrings/tor-archive-keyring.gpg > /dev/null \
+&& curl -fL https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | sudo tee /usr/share/keyrings/tor-archive-keyring.gpg > /dev/null \
 && echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org impish main' | sudo tee /etc/apt/sources.list.d/tor.list \
 && echo 'deb-src [arch=amd64 signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org impish main' | sudo tee -a /etc/apt/sources.list.d/tor.list \
 && echo -e "\n$(tput setaf 2)Tor repo added\n$(tput sgr0)" \
@@ -64,7 +64,7 @@ echo -e "\n$(tput setaf 3)adding NodeSource repo\n$(tput sgr0)" \
 && KEYRING=/usr/share/keyrings/nodesource.gpg \
 && VERSION=node_16.x \
 && DISTRO="$(lsb_release -s -c)" \
-&& wget -O- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | sudo tee "$KEYRING" >/dev/null \
+&& curl -fL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | sudo tee "$KEYRING" >/dev/null \
 && echo "deb [signed-by=$KEYRING] https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list \
 && echo "deb-src [signed-by=$KEYRING] https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list \
 && echo -e "\n$(tput setaf 2)NodeSource repo added\n$(tput sgr0)" \
