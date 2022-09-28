@@ -117,15 +117,13 @@ echo -e "\n$(tput setaf 3)installing nodejs\n$(tput sgr0)" \
 
 # install custom scripts in /usr/local/bin
 && echo -e "\n$(tput setaf 3)installing custom commands\n$(tput sgr0)" \
-&& sudo wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=10nzp_ou8tIFCykR1P40KTRLiCJslZBig' -O /usr/local/bin/autoupgrade \
-&& sudo wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=15ow-RdAuF8cKuuJ6-y4tzgtLFg4xtfzp' -O /usr/local/bin/decryptclip \
-&& sudo wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1aHAV8Ca9EEUXb1igUSd6xcsmYXrwpKnE' -O /usr/local/bin/importpgp \
-&& sudo wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1Gsi_jsWlH4JJVZmik_WwbJ-Goyu1Kc15' -O /usr/local/bin/temps \
-&& sudo wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1Hd9o_gRQ6JKEKt92388sjPh8YVf4nB3N' -O /usr/local/bin/whatsmyip \
-&& sudo wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1IA9lV5RrK7v1Jqq4wfcQi6uBn-bJoAcw' -O /usr/local/bin/flatpaks \
-&& sudo wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1nuZ97MBkBvDMAbEAmDNG--UX_GNa0GwE' -O /usr/local/bin/ycmcompile \
-&& sudo wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1R8RhO7Op_m7Q6uICt4hkqphWz0GFLAfx' -O /usr/local/bin/googledrive \
-&& sudo chmod 755 /usr/local/bin/* \
+&& sudo curl -fLo /usr/local/bin/autoupgrade https://raw.githubusercontent.com/xmready/system-scripts/main/autoupgrade \
+&& sudo curl -fLo /usr/local/bin/decryptclip https://raw.githubusercontent.com/xmready/system-scripts/main/decryptclip \
+&& sudo curl -fLo /usr/local/bin/flatpaks https://raw.githubusercontent.com/xmready/system-scripts/main/flatpaks \
+&& sudo curl -fLo /usr/local/bin/importpgp https://raw.githubusercontent.com/xmready/system-scripts/main/importpgp \
+&& sudo curl -fLo /usr/local/bin/temps https://raw.githubusercontent.com/xmready/system-scripts/main/temps \
+&& sudo curl -fLo /usr/local/bin/whatsmyip https://raw.githubusercontent.com/xmready/system-scripts/main/whatsmyip \
+&& sudo chmod +x /usr/local/bin/* \
 && echo -e "\n$(tput setaf 2)custom commands installed\n$(tput sgr0)" \
 && sleep 3 \
 
