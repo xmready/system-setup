@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 # system setup
+# new install
 
 # apt sources.list cleanup
 echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
