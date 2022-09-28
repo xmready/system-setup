@@ -1,2 +1,2 @@
-# personal-scripts
-Repository containing my personal setup and command scripts.
+# System Setup
+Automated setup of a new debian based operating system, tuned to my personal liking.
