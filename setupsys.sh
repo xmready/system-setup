@@ -24,7 +24,7 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 3)installing packages\n$(tput sgr0)" \
 && curl -fLo /tmp/rclone.deb https://downloads.rclone.org/rclone-current-linux-amd64.deb \
 && sudo apt update \
-&& sudo apt install -y bash-completion checkinstall curl figlet flatpak git gnome-software-plugin-flatpak keepassxc lm-sensors neofetch nmap qrencode rsync ufw xclip /tmp/rclone.deb \
+&& sudo apt install -y bash-completion build-essential checkinstall curl figlet flatpak git gnome-software-plugin-flatpak keepassxc lm-sensors neofetch nmap qrencode rsync ufw xclip /tmp/rclone.deb \
 && echo -e "\n$(tput setaf 2)packages installed\n$(tput sgr0)" \
 && sleep 3 \
 && sudo -v \
