@@ -113,6 +113,7 @@ echo -e "\n$(tput setaf 3)installing nodejs\n$(tput sgr0)" \
 && sudo apt autoclean \
 && echo -e "\n$(tput setaf 2)package cleanup complete\n$(tput sgr0)" \
 && sleep 3 \
+&& sudo -v \
 
 # install custom scripts in /usr/local/bin
 && echo -e "\n$(tput setaf 3)installing custom commands\n$(tput sgr0)" \
