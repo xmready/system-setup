@@ -26,11 +26,11 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && sleep 3 \
 
 # add .vimrc
-&& echo -e "\n$(tput setaf 3)adding vimrc\n$(tput sgr0)" \
-&& echo -e "unlet! skip_defaults_vim\nsource \$VIMRUNTIME/defaults.vim\nset number" | tee ~/.vimrc > /dev/null \
-&& echo -e "unlet! skip_defaults_vim\nsource \$VIMRUNTIME/defaults.vim\nset number" | sudo tee /root/.vimrc > /dev/null \
-&& echo -e "\n$(tput setaf 2)vimrc added\n$(tput sgr0)" \
+&& echo -e "\n$(tput setaf 3)configuring Vim\n$(tput sgr0)" \
+&& curl -fLo ~/.vimrc https://raw.githubusercontent.com/xmready/vim-config/main/.vimrc-root \
+&& sudo curl -fLo /root/.vimrc https://raw.githubusercontent.com/xmready/vim-config/main/.vimrc-root \
 && sleep 3 \
+&& echo -e "\n$(tput setaf 2)Vim configured\n$(tput sgr0)"
 
 # install custom scripts in /usr/local/bin
 && echo -e "\n$(tput setaf 3)installing custom commands\n$(tput sgr0)" \
