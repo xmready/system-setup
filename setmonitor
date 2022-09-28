@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+#configure monitor settings
+xrandr --setprovideroutputsource modesetting NVIDIA-0 \
+&& xrandr --auto \
+&& xrandr --output eDP-1-1 --primary \
+&& xrandr --output DP-0 --left-of eDP-1-1 \
+&& xrandr --output DP-1 --right-of eDP-1-1

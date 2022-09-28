@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+#install legacy nvidia 390 drivers
+echo -e "\n$(tput setaf 3)installing nvidia drivers\n$(tput sgr0)" \
+&& sudo apt update \
+&& sudo apt install -y nvidia-legacy-390xx-driver firmware-misc-nonfree \
+&& echo -e "\n$(tput setaf 2)nvidia drivers installed\n$(tput sgr0)" \
+&& echo -e "\n$(tput setaf 1)$(tput bold)SYSTEM WILL REBOOT IN 15 SECONDS$(tput sgr0)$(tput bel)" \
+&& sleep 15 \
+&& sudo reboot
