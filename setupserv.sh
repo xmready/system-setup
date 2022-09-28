@@ -17,13 +17,15 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && sudo apt upgrade -y \
 && echo -e "\n$(tput setaf 2)packages upgraded\n$(tput sgr0)" \
 && sleep 3 \
+&& sudo -v \
 
 # apt common package installation
 && echo -e "\n$(tput setaf 3)installing packages\n$(tput sgr0)" \
 && sudo apt update \
-&& sudo apt install -y gnupg screen figlet neofetch nmap rsync lm-sensors ufw curl git checkinstall build-essential vim-nox \
+&& sudo apt install -y build-essential checkinstall curl figlet git gnupg lm-sensors neofetch nmap rsync screen ufw vim-nox \
 && echo -e "\n$(tput setaf 2)packages installed\n$(tput sgr0)" \
 && sleep 3 \
+&& sudo -v \
 
 # add .vimrc
 && echo -e "\n$(tput setaf 3)configuring Vim\n$(tput sgr0)" \
