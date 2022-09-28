@@ -34,11 +34,10 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 
 # install custom scripts in /usr/local/bin
 && echo -e "\n$(tput setaf 3)installing custom commands\n$(tput sgr0)" \
-&& sudo wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=15ow-RdAuF8cKuuJ6-y4tzgtLFg4xtfzp' -O /usr/local/bin/decryptclip \
-&& sudo wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1aHAV8Ca9EEUXb1igUSd6xcsmYXrwpKnE' -O /usr/local/bin/importpgp \
-&& sudo wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1Gsi_jsWlH4JJVZmik_WwbJ-Goyu1Kc15' -O /usr/local/bin/temps \
-&& sudo wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1Hd9o_gRQ6JKEKt92388sjPh8YVf4nB3N' -O /usr/local/bin/whatsmyip \
-&& sudo chmod 755 /usr/local/bin/* \
+&& sudo curl -fLo /usr/local/bin/autoupgrade https://raw.githubusercontent.com/xmready/system-scripts/main/autoupgrade \
+&& sudo curl -fLo /usr/local/bin/temps https://raw.githubusercontent.com/xmready/system-scripts/main/temps \
+&& sudo curl -fLo /usr/local/bin/whatsmyip https://raw.githubusercontent.com/xmready/system-scripts/main/whatsmyip \
+&& sudo chmod +x /usr/local/bin/* \
 && echo -e "\n$(tput setaf 2)custom commands installed\n$(tput sgr0)" \
 && sleep 3 \
 
