@@ -136,13 +136,6 @@ echo -e "\n$(tput setaf 3)installing nodejs\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 2)bashrc customized\n$(tput sgr0)" \
 && sleep 3 \
 
-# mac address policy configuration
-&& echo -e "\n$(tput setaf 3)configuring random mac address policy\n$(tput sgr0)" \
-&& echo -e "[Match]\nOriginalName=*\n\n[Link]\nMACAddressPolicy=random" | sudo tee /etc/systemd/network/10-macaddresses.link > /dev/null \
-&& cat /etc/systemd/network/10-macaddresses.link \
-&& echo -e "\n$(tput setaf 2)mac address policy set to random\n$(tput sgr0)" \
-&& sleep 3 \
-
 # tcp timestamp configuration
 && echo -e "\n$(tput setaf 3)disabling tcp timestamps\n$(tput sgr0)" \
 && echo "net.ipv4.tcp_timestamps = 0" | sudo tee /etc/sysctl.d/tcp_timestamps.conf > /dev/null \
