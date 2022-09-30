@@ -30,9 +30,12 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && sudo -v \
 
 # Signal repository configuration and installation
+&& KEYRING=/usr/share/keyrings/signal-desktop-keyring.gpg \
+&& SOURCES=/etc/apt/sources.list.d/signal.list \
+&& DISTRO=xenial \
 && echo -e "\n$(tput setaf 3)adding Signal repo\n$(tput sgr0)" \
-&& curl -fL https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null \
-&& echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | sudo tee /etc/apt/sources.list.d/signal.list > /dev/null \
+&& curl -fL https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor | sudo tee "$KEYRING" > /dev/null \
+&& echo "deb [arch=amd64 signed-by=$KEYRING] https://updates.signal.org/desktop/apt $DISTRO main" | sudo tee "$SOURCES" \
 && echo -e "\n$(tput setaf 2)Signal repo added\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)installing Signal\n$(tput sgr0)" \
