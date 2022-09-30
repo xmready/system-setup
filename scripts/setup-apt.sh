@@ -2,7 +2,6 @@
 
 # apt system setup
 
-# apt sources.list cleanup
 echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && sudo sed -i '/#/d' /etc/apt/sources.list \
 && sudo sed -i '/^$/d' /etc/apt/sources.list \
