@@ -101,15 +101,16 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 # NodeSource repository configuration and installation
 echo -e "\n$(tput setaf 3)adding NodeSource repo\n$(tput sgr0)" \
 && KEYRING=/usr/share/keyrings/nodesource.gpg \
-&& VERSION=node_16.x \
+&& SOURCES=/etc/apt/sources.list.d/nodesource.list \
 && DISTRO="$(lsb_release -s -c)" \
+&& VERSION=node_16.x \
 && curl -fL https://deb.nodesource.com/gpgkey/nodesource.gpg.key \
   | gpg --dearmor \
-  | sudo tee "$KEYRING" >/dev/null \
+  | sudo tee "$KEYRING" > /dev/null \
 && echo "deb [signed-by=$KEYRING] https://deb.nodesource.com/$VERSION $DISTRO main" \
-  | sudo tee /etc/apt/sources.list.d/nodesource.list \
+  | sudo tee "$SOURCES" \
 && echo "deb-src [signed-by=$KEYRING] https://deb.nodesource.com/$VERSION $DISTRO main" \
-  | sudo tee -a /etc/apt/sources.list.d/nodesource.list \
+  | sudo tee -a "$SOURCES" \
 && echo -e "\n$(tput setaf 2)NodeSource repo added\n$(tput sgr0)" \
 && sleep 3 \
 echo -e "\n$(tput setaf 3)installing nodejs\n$(tput sgr0)" \
