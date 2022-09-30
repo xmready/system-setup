@@ -75,7 +75,7 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 # vim-nox installation and configuration
 && echo -e "\n$(tput setaf 3)installing Vim\n$(tput sgr0)" \
 && sudo apt update \
-&& sudo apt install curl build-essential cmake golang mono-complete openjdk-17-jdk openjdk-17-jre python3-dev vim-nox \
+&& sudo apt install -y curl build-essential cmake golang mono-complete openjdk-17-jdk openjdk-17-jre python3-dev vim-nox \
 && echo -e "\n$(tput setaf 2)Vim installed\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)configuring Vim\n$(tput sgr0)" \
