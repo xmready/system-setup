@@ -43,9 +43,12 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 
 # Tor repository configuration and installation
 && echo -e "\n$(tput setaf 3)adding Tor repo\n$(tput sgr0)" \
-&& curl -fL https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | sudo tee /usr/share/keyrings/tor-archive-keyring.gpg > /dev/null \
-&& echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org impish main' | sudo tee /etc/apt/sources.list.d/tor.list \
-&& echo 'deb-src [arch=amd64 signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org impish main' | sudo tee -a /etc/apt/sources.list.d/tor.list \
+&& KEYRING=/usr/share/keyrings/tor-archive-keyring.gpg \
+&& SOURCES=/etc/apt/sources.list.d/tor.list \
+&& DISTRO="$(lsb_release -s -c)" \
+&& curl -fL https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | sudo tee "$KEYRING" > /dev/null \
+&& echo "deb [arch=amd64 signed-by=$KEYRING] https://deb.torproject.org/torproject.org $DISTRO main" | sudo tee "$SOURCES" \
+&& echo "deb-src [arch=amd64 signed-by=$KEYRING] https://deb.torproject.org/torproject.org $DISTRO main" | sudo tee -a "$SOURCES" \
 && echo -e "\n$(tput setaf 2)Tor repo added\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)installing Tor\n$(tput sgr0)" \
