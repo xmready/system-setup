@@ -2,11 +2,12 @@
 
 # Signal repository configuration and installation
 
+PGPURL=https://updates.signal.org/desktop/apt/keys.asc
 KEYRING=/usr/share/keyrings/signal-desktop-keyring.gpg
 SOURCES=/etc/apt/sources.list.d/signal.list
 DISTRO=xenial
 echo -e "\n$(tput setaf 3)adding Signal repo\n$(tput sgr0)" \
-&& curl -fL https://updates.signal.org/desktop/apt/keys.asc \
+&& curl -fL "$PGPURL" \
   | gpg --dearmor \
   | sudo tee "$KEYRING" > /dev/null \
 && echo "deb [arch=amd64 signed-by=$KEYRING] https://updates.signal.org/desktop/apt $DISTRO main" \
