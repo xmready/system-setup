@@ -2,10 +2,10 @@
 
 # Signal repository configuration and installation
 
+KEYRING=/usr/share/keyrings/signal-desktop-keyring.gpg
+SOURCES=/etc/apt/sources.list.d/signal.list
+DISTRO=xenial
 echo -e "\n$(tput setaf 3)adding Signal repo\n$(tput sgr0)" \
-&& KEYRING=/usr/share/keyrings/signal-desktop-keyring.gpg \
-&& SOURCES=/etc/apt/sources.list.d/signal.list \
-&& DISTRO=xenial \
 && curl -fL https://updates.signal.org/desktop/apt/keys.asc \
   | gpg --dearmor \
   | sudo tee "$KEYRING" > /dev/null \
