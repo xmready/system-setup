@@ -10,7 +10,7 @@ IMPORTPGP=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/im
 TEMPS=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/temps.sh
 WHATSMYIP=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/whatsmyip.sh
 
-&& echo -e "\n$(tput setaf 3)installing custom commands\n$(tput sgr0)" \
+echo -e "\n$(tput setaf 3)installing custom commands\n$(tput sgr0)" \
 && sudo curl -fLo /usr/local/bin/autoupgrade "$AUTOUPGRADE" \
 && sudo curl -fLo /usr/local/bin/decryptclip "$DECRYPTCLIP" \
 && sudo curl -fLo /usr/local/bin/googledrive "$FLATPAKS" \
