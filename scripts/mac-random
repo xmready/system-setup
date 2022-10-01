@@ -1,7 +1,0 @@
-#!/usr/bin/bash
-
-# mac address policy configuration
-&& echo -e "\n$(tput setaf 3)configuring random mac address policy\n$(tput sgr0)" \
-&& echo -e "[Match]\nOriginalName=*\n\n[Link]\nMACAddressPolicy=random" | sudo tee /etc/systemd/network/10-macaddresses.link > /dev/null \
-&& cat /etc/systemd/network/10-macaddresses.link \
-&& echo -e "\n$(tput setaf 2)mac address policy set to random\n$(tput sgr0)" \
