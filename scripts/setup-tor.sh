@@ -9,7 +9,7 @@ REPOURL=https://deb.torproject.org/torproject.org
 DISTRO="$(lsb_release -s -c)"
 SOURCES=/etc/apt/sources.list.d/tor.list
 
-&& echo -e "\n$(tput setaf 3)adding Tor repo\n$(tput sgr0)" \
+echo -e "\n$(tput setaf 3)adding Tor repo\n$(tput sgr0)" \
 && curl -fL "$PGPURL" \
   | gpg --dearmor \
   | sudo tee "$KEYRING" > /dev/null \
