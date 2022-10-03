@@ -19,7 +19,7 @@ wget --quiet -O- "$SETUPAPT" | bash - \
 && curl -fsSL "$CLEANAPT" | bash - \
 && curl -fsSL "$SETUPCOMMANDS" | bash - \
 && curl -fsSL "$HARDENNETWORK" | bash - \
-&& curl -fsSL "$HARDENNETWORK" | bash - \
+&& curl -fsSL "$SETUPBASH" | bash - \
 && echo -e \
   "\n$(tput setaf 1)$(tput bold)SYSTEM WILL REBOOT IN 60 SECONDS\n$(tput sgr0)$(tput bel)" \
 && sudo shutdown -r
