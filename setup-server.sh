@@ -1,7 +1,13 @@
 #!/usr/bin/bash
 
-# server setup
-# new install
+# Discussion, issues and change requests at:
+#   https://github.com/xmready/system-setup
+#
+# Purpose:
+#   A script to setup a new debian based server install
+#
+# Non-root usage:
+#   wget --quiet -O- https://raw.githubusercontent.com/xmready/system-setup/main/setup-server.sh | bash -
 
 SETUPAPT=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-server-apt.sh
 SETUPVIM=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-server-vim.sh
