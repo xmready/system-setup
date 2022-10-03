@@ -3,7 +3,7 @@
 # harden network with firewall and timestamps
 
 TIMESTAMPS=/etc/sysctl.d/90-tcp_timestamps.conf
-STAMPSURL=https://github.com/xmready/system-setup/blob/main/configs/90-tcp_timestamps.conf
+STAMPSURL=https://raw.githubusercontent.com/xmready/system-setup/main/configs/90-tcp_timestamps.conf
 
 echo -e "\n$(tput setaf 3)disabling tcp timestamps\n$(tput sgr0)" \
 && sudo curl -fLo "$TIMESTAMPS" "$STAMPSURL" \
