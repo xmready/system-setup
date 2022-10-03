@@ -18,7 +18,7 @@ echo -e "\n$(tput setaf 3)disabling tcp timestamps\n$(tput sgr0)" \
 && sudo ufw default allow outgoing \
 && sudo ufw allow ssh \
 && sudo ufw logging off \
-&& sudo ufw enable \
+&& sudo ufw --force enable \
 && sudo ufw status verbose \
 && sudo -v \
 && echo -e "\n$(tput setaf 2)firewall configured\n$(tput sgr0)" \
