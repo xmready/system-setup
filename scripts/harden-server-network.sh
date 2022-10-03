@@ -10,7 +10,7 @@ SSHDURL=https://raw.githubusercontent.com/xmready/system-setup/main/configs/90-s
 
 echo -e "\n$(tput setaf 3)disabling tcp timestamps\n$(tput sgr0)" \
 && sudo curl -fLo "$TIMESTAMPS" "$STAMPSURL" \
-&& sudo sysctl -q --system \
+&& sudo sysctl -q --system 2> /dev/null \
 && sudo sysctl -a 2> /dev/null | grep timestamps \
 && echo -e "\n$(tput setaf 2)tcp timestamps disabled\n$(tput sgr0)" \
 && sleep 3 \
