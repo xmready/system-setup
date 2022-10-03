@@ -1,7 +1,13 @@
 #!/usr/bin/bash
 
-# system setup
-# new install
+# Discussion, issues and change requests at:
+#   https://github.com/xmready/system-setup
+#
+# Purpose:
+#   A script to setup a new debian based desktop/laptop
+#
+# Non-root usage:
+#   wget --quiet -O- https://raw.githubusercontent.com/xmready/system-setup/main/setup-system.sh | bash -
 
 SETUPAPT=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-apt.sh
 SETUPSIGNAL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-signal.sh
@@ -13,13 +19,21 @@ HARDENNETWORK=https://raw.githubusercontent.com/xmready/system-setup/main/script
 SETUPBASH=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-bash.sh
 
 wget --quiet -O- "$SETUPAPT" | bash - \
+&& sleep 3 \
 && curl -fsSL "$SETUPSIGNAL" | bash - \
+&& sleep 3 \
 && curl -fsSL "$SETUPTOR" | bash - \
+&& sleep 3 \
 && curl -fsSL "$SETUPVIM" | bash - \
+&& sleep 3 \
 && curl -fsSL "$CLEANAPT" | bash - \
+&& sleep 3 \
 && curl -fsSL "$SETUPCOMMANDS" | bash - \
+&& sleep 3 \
 && curl -fsSL "$HARDENNETWORK" | bash - \
+&& sleep 3 \
 && curl -fsSL "$SETUPBASH" | bash - \
+&& sleep 3 \
 && echo -e \
   "\n$(tput setaf 1)$(tput bold)SYSTEM WILL REBOOT IN 60 SECONDS\n$(tput sgr0)$(tput bel)" \
 && sudo shutdown -r
