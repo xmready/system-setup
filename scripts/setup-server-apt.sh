@@ -16,8 +16,8 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && sudo -v \
 && echo -e "\n$(tput setaf 3)installing packages\n$(tput sgr0)" \
 && sudo apt install -y \
-  build-essential checkinstall curl figlet git \
-  gnupg lm-sensors neofetch nmap rsync screen \
+  build-essential checkinstall curl figlet fail2ban \
+  git gnupg lm-sensors neofetch nmap rsync screen \
   ufw vim-nox \
 && sudo -v \
 && echo -e "\n$(tput setaf 2)packages installed\n$(tput sgr0)"
