@@ -17,11 +17,17 @@ HARDENNETWORK=https://raw.githubusercontent.com/xmready/system-setup/main/script
 SETUPBASH=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-server-bash.sh
 
 wget --quiet -O- "$SETUPAPT" | bash - \
+&& sleep 3 \
 && curl -fsSL "$SETUPVIM" | bash - \
+&& sleep 3 \
 && curl -fsSL "$CLEANAPT" | bash - \
+&& sleep 3 \
 && curl -fsSL "$SETUPCOMMANDS" | bash - \
+&& sleep 3 \
 && curl -fsSL "$HARDENNETWORK" | bash - \
+&& sleep 3 \
 && curl -fsSL "$SETUPBASH" | bash - \
+&& sleep 3 \
 && echo -e \
   "\n$(tput setaf 1)$(tput bold)SYSTEM WILL REBOOT IN 60 SECONDS\n$(tput sgr0)$(tput bel)" \
 && sudo shutdown -r
