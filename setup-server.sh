@@ -10,7 +10,7 @@ SETUPCOMMANDS=https://raw.githubusercontent.com/xmready/system-setup/main/script
 HARDENNETWORK=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/harden-server-network.sh
 SETUPBASH=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-server-bash.sh
 
-curl -fsSL "$SETUPAPT" | bash - \
+wget --quiet -O- "$SETUPAPT" | bash - \
 && curl -fsSL "$SETUPVIM" | bash - \
 && curl -fsSL "$CLEANAPT" | bash - \
 && curl -fsSL "$SETUPCOMMANDS" | bash - \
