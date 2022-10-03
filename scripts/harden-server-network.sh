@@ -3,7 +3,7 @@
 # harden server network settings with firewall and timestamps
 
 TIMESTAMPS=/etc/sysctl.d/90-tcp_timestamps.conf
-STAMPSURL=https://github.com/xmready/system-setup/blob/main/configs/90-tcp_timestamps.conf
+STAMPSURL=https://raw.githubusercontent.com/xmready/system-setup/main/configs/90-tcp_timestamps.conf
 HOSTKEY=/etc/ssh/ssh_host_ed25519_key
 SSHHARDEN=/etc/ssh/sshd_config.d/90-ssh-hardening.conf
 SSHDURL=https://raw.githubusercontent.com/xmready/system-setup/main/configs/90-ssh-hardening.conf
