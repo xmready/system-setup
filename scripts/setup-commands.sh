@@ -13,8 +13,8 @@ WHATSMYIP=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/wh
 echo -e "\n$(tput setaf 3)installing custom commands\n$(tput sgr0)" \
 && sudo curl -fLo /usr/local/bin/autoupgrade "$AUTOUPGRADE" \
 && sudo curl -fLo /usr/local/bin/decryptclip "$DECRYPTCLIP" \
-&& sudo curl -fLo /usr/local/bin/googledrive "$FLATPAKS" \
-&& sudo curl -fLo /usr/local/bin/flatpaks "$GOOGLEDRIVE" \
+&& sudo curl -fLo /usr/local/bin/flatpaks "$FLATPAKS" \
+&& sudo curl -fLo /usr/local/bin/googledrive "$GOOGLEDRIVE" \
 && sudo curl -fLo /usr/local/bin/importpgp "$IMPORTPGP" \
 && sudo curl -fLo /usr/local/bin/temps "$TEMPS" \
 && sudo curl -fLo /usr/local/bin/whatsmyip "$WHATSMYIP" \
