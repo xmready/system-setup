@@ -21,7 +21,8 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && sudo apt install -y \
   bash-completion build-essential checkinstall curl figlet \
   flatpak git gnome-software-plugin-flatpak gnupg keepassxc \
-  lm-sensors lxc neofetch nmap qrencode rsync ssh-audit ufw xclip \
+  lm-sensors lxc neofetch nmap qrencode rsync ssh-audit ufw \
+  zfsutils-linux xclip \
 && echo -e "\n$(tput setaf 2)packages installed\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 3)installing rclone\n$(tput sgr0)" \
 && curl -fLo /tmp/rclone.deb "$RCLONEDEB" \
