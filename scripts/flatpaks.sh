@@ -7,5 +7,5 @@ echo -e "\n$(tput setaf 3)installing flatpaks\n$(tput sgr0)" \
   org.videolan.VLC org.inkscape.Inkscape org.kde.kdenlive \
   org.blender.Blender org.qbittorrent.qBittorrent \
   org.audacityteam.Audacity org.libreoffice.LibreOffice \
-  tv.kodi.Kodi org.mozilla.firefox flathub com.jetbrains.WebStorm \
+  tv.kodi.Kodi org.mozilla.firefox com.jetbrains.WebStorm \
 && echo -e "\n$(tput setaf 2)flatpaks installed\n$(tput sgr0)"
