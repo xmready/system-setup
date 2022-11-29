@@ -33,7 +33,7 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 3)adding flathub repo\n$(tput sgr0)" \
 && sudo flatpak remote-add --if-not-exists flathub "$REPOURL" \
 && echo -e "\n$(tput setaf 2)flathub repo added\n$(tput sgr0)" \
-&& sleep 3
+&& sleep 3 \
 && echo -e "\n$(tput setaf 3)installing flatpaks\n$(tput sgr0)" \
 && flatpak install -y flathub \
   org.gimp.GIMP im.pidgin.Pidgin org.gnucash.GnuCash \
