@@ -10,5 +10,5 @@ echo -e "\n$(tput setaf 3)installing flatpaks\n$(tput sgr0)" \
   tv.kodi.Kodi org.mozilla.firefox com.jetbrains.WebStorm \
   org.telegram.desktop org.signal.Signal org.kde.kleopatra \
   com.github.tchx84.Flatseal im.riot.Riot com.github.flxzt.rnote \
-  org.keepassxc.KeePassXC \
+  org.keepassxc.KeePassXC org.electrum.electrum \
 && echo -e "\n$(tput setaf 2)flatpaks installed\n$(tput sgr0)"
