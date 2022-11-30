@@ -3,6 +3,8 @@
 # apt  and flatpak system setup
 
 RCLONEDEB=https://downloads.rclone.org/rclone-current-linux-amd64.deb
+GOOGLEDESKTOP=~/.config/autostart/googledrive.desktop
+GOOGLEURL=https://raw.githubusercontent.com/xmready/system-setup/main/configs/googledrive.desktop
 REPOURL=https://flathub.org/repo/flathub.flatpakrepo
 
 echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
@@ -30,6 +32,7 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && mkdir ~/gdrive \
 && mkdir ~/vault \
 && mkdir ~/.config/autostart \
+&& curl -fsSLo "$GOOGLEDESKTOP" "$GOOGLEURL" \
 && sudo -v \
 && echo -e "\n$(tput setaf 2)rclone installed\n$(tput sgr0)" \
 && sleep 3 \
