@@ -27,6 +27,8 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 3)installing rclone\n$(tput sgr0)" \
 && curl -fLo /tmp/rclone.deb "$RCLONEDEB" \
 && sudo apt install -y /tmp/rclone.deb \
+&& mkdir ~/gdrive \
+&& mkdir ~/vault \
 && sudo -v \
 && echo -e "\n$(tput setaf 2)rclone installed\n$(tput sgr0)" \
 && sleep 3 \
