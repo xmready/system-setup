@@ -29,6 +29,7 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && sudo apt install -y /tmp/rclone.deb \
 && mkdir ~/gdrive \
 && mkdir ~/vault \
+&& mkdir ~/.config/autostart \
 && sudo -v \
 && echo -e "\n$(tput setaf 2)rclone installed\n$(tput sgr0)" \
 && sleep 3 \
