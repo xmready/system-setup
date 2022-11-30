@@ -9,7 +9,7 @@
 # Non-root usage:
 #   wget --quiet -O- https://raw.githubusercontent.com/xmready/system-setup/main/setup-system.sh | bash -
 
-SETUPAPT=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-apt.sh
+SETUPAPPS=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-apps.sh
 SETUPSIGNAL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-signal.sh
 SETUPTOR=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-tor.sh
 SETUPVIM=https://raw.githubusercontent.com/xmready/vim-config/main/setup-vim.sh
@@ -18,7 +18,7 @@ SETUPCOMMANDS=https://raw.githubusercontent.com/xmready/system-setup/main/script
 HARDENNETWORK=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/harden-network.sh
 SETUPBASH=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-bash.sh
 
-wget --quiet -O- "$SETUPAPT" | bash - \
+wget --quiet -O- "$SETUPAPPS" | bash - \
 && sleep 3 \
 && curl -fsSL "$SETUPSIGNAL" | bash - \
 && sleep 3 \
