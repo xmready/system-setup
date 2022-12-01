@@ -22,8 +22,8 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 3)installing packages\n$(tput sgr0)" \
 && sudo apt install -y \
   bash-completion build-essential checkinstall curl figlet \
-  flatpak git gnome-software-plugin-flatpak gnupg lm-sensors \
-  lxc neofetch nmap qrencode rsync ssh-audit ufw \
+  flatpak git gnome-software-plugin-flatpak gnupg keepassxc \
+  lm-sensors lxc neofetch nmap qrencode rsync ssh-audit ufw \
   zfsutils-linux xclip \
 && echo -e "\n$(tput setaf 2)packages installed\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 3)installing rclone\n$(tput sgr0)" \
@@ -49,5 +49,5 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
   tv.kodi.Kodi org.mozilla.firefox com.jetbrains.WebStorm \
   org.telegram.desktop org.signal.Signal org.kde.kleopatra \
   com.github.tchx84.Flatseal im.riot.Riot com.github.flxzt.rnote \
-  org.keepassxc.KeePassXC org.electrum.electrum \
+  org.electrum.electrum \
 && echo -e "\n$(tput setaf 2)flatpaks installed\n$(tput sgr0)"
