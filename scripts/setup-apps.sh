@@ -36,7 +36,7 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && rm -rf ~/.ssh ~/.gnupg \
 && ln -s ~/vault/configs/.ssh/ ~/.ssh \
 && ln -s ~/vault/configs/.gnupg/ ~/.gnupg \
-&& ln -s ~/vault/configs/.gitconfig/ ~/.gitconfig \
+&& ln -s ~/vault/configs/.gitconfig ~/.gitconfig \
 && sudo -v \
 && echo -e "\n$(tput setaf 2)rclone installed\n$(tput sgr0)" \
 && sleep 3 \
