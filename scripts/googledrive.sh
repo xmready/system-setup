@@ -3,4 +3,4 @@
 
 sleep 10 \
 && rclone mount gdrive: ~/gdrive --daemon --vfs-cache-mode full --dir-perms 755 --file-perms 640 \
-&& rclone mount vault: ~/vault --daemon --vfs-cache-mode full --dir-perms 755 --file-perms 600
+&& rclone mount vault: ~/vault --daemon --vfs-cache-mode full --dir-perms 700 --file-perms 600
