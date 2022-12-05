@@ -53,5 +53,5 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
   tv.kodi.Kodi org.mozilla.firefox com.jetbrains.WebStorm \
   org.telegram.desktop org.signal.Signal org.kde.kleopatra \
   com.github.tchx84.Flatseal im.riot.Riot com.github.flxzt.rnote \
-  org.electrum.electrum \
+  org.electrum.electrum tv.plex.PlexDesktop \
 && echo -e "\n$(tput setaf 2)flatpaks installed\n$(tput sgr0)"
