@@ -31,6 +31,7 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && sudo apt install -y /tmp/rclone.deb \
 && mkdir -p ~/gdrive \
 && mkdir -p ~/vault \
+&& mkdir -p ~/.config/rclone \
 && mkdir -p ~/.config/autostart \
 && curl -fsSLo "$GOOGLEDESKTOP" "$GOOGLEURL" \
 && rm -rf ~/.ssh ~/.gnupg \
