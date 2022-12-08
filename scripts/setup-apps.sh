@@ -3,9 +3,11 @@
 # apt  and flatpak system setup
 
 RCLONEDEB=https://downloads.rclone.org/rclone-current-linux-amd64.deb
-GOOGLEDESKTOP=~/.config/autostart/googledrive.desktop
-GOOGLEURL=https://raw.githubusercontent.com/xmready/system-setup/main/configs/googledrive.desktop
-REPOURL=https://flathub.org/repo/flathub.flatpakrepo
+GDRIVEUNIT=~/.config/systemd/user/mnt-gdrive.service
+CRYPTUNIT=~/.config/systemd/user/mnt-gdrive-crypt.service
+GDRIVEURL=https://raw.githubusercontent.com/xmready/system-setup/main/configs/mnt-gdrive.service
+CRYPTURL=https://raw.githubusercontent.com/xmready/system-setup/main/configs/mnt-gdrive-crypt.service
+FLATHUBURL=https://flathub.org/repo/flathub.flatpakrepo
 
 echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && sudo sed -i '/#/d' /etc/apt/sources.list \
@@ -29,20 +31,28 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 3)installing rclone\n$(tput sgr0)" \
 && curl -fLo /tmp/rclone.deb "$RCLONEDEB" \
 && sudo apt install -y /tmp/rclone.deb \
-&& mkdir -p ~/gdrive \
-&& mkdir -p ~/vault \
-&& mkdir -p ~/.config/rclone \
-&& mkdir -p ~/.config/autostart \
-&& curl -fsSLo "$GOOGLEDESKTOP" "$GOOGLEURL" \
+&& sudo mkdir -p /mnt/gdrive /mnt/vault \
+&& sudo chown "$USER":"$USER" /mnt/gdrive /mnt/vault \
+&& mkdir -p ~/.config/rclone ~/.config/systemd/user \
+&& curl -fsSLo "$GDRIVEUNIT" "$GDRIVEURL" \
+&& curl -fsSLo "$CRYPTUNIT" "$CRYPTURL" \
 && rm -rf ~/.ssh ~/.gnupg \
-&& ln -s ~/vault/configs/.ssh/ ~/.ssh \
-&& ln -s ~/vault/configs/.gnupg/ ~/.gnupg \
-&& ln -s ~/vault/configs/.gitconfig ~/.gitconfig \
+&& ln -s /mnt/vault/ ~/vault \
+&& ln -s /mnt/vault/configs/.ssh/ ~/.ssh \
+&& ln -s /mnt/vault/configs/.gnupg/ ~/.gnupg \
+&& ln -s /mnt/vault/configs/.gitconfig ~/.gitconfig \
+&& ln -s /mnt/vault/accounting/ ~/accounting \
+&& ln -s /mnt/gdrive/ ~/gdrive \
+&& ln -s /mnt/gdrive/backups/ ~/backups \
+&& ln -s /mnt/gdrive/coding/ ~/coding \
+&& ln -s /mnt/gdrive/documents/ ~/documents \
+&& ln -s /mnt/gdrive/keepass/ ~/keepass \
+&& ln -s /mnt/gdrive/videos/ ~/videos \
 && sudo -v \
 && echo -e "\n$(tput setaf 2)rclone installed\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)adding flathub repo\n$(tput sgr0)" \
-&& sudo flatpak remote-add --if-not-exists flathub "$REPOURL" \
+&& sudo flatpak remote-add --if-not-exists flathub "$FLATHUBURL" \
 && echo -e "\n$(tput setaf 2)flathub repo added\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)installing flatpaks\n$(tput sgr0)" \
