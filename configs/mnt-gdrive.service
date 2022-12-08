@@ -5,9 +5,8 @@ After=network-online.target
 
 [Service]
 Type=notify
-Restart=on-abort
+Restart=on-failure
 RestartSec=5
-KillMode=none
 ExecStart=/usr/bin/rclone mount gdrive: /mnt/gdrive --vfs-cache-mode full
 
 [Install]
