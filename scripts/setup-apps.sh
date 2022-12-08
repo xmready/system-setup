@@ -36,18 +36,6 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && mkdir -p ~/.config/rclone ~/.config/systemd/user \
 && curl -fsSLo "$GDRIVEUNIT" "$GDRIVEURL" \
 && curl -fsSLo "$CRYPTUNIT" "$CRYPTURL" \
-&& rm -rf ~/.ssh ~/.gnupg \
-&& ln -s /mnt/vault/ ~/vault \
-&& ln -s /mnt/vault/configs/.ssh/ ~/.ssh \
-&& ln -s /mnt/vault/configs/.gnupg/ ~/.gnupg \
-&& ln -s /mnt/vault/configs/.gitconfig ~/.gitconfig \
-&& ln -s /mnt/vault/accounting/ ~/accounting \
-&& ln -s /mnt/gdrive/ ~/gdrive \
-&& ln -s /mnt/gdrive/backups/ ~/backups \
-&& ln -s /mnt/gdrive/coding/ ~/coding \
-&& ln -s /mnt/gdrive/documents/ ~/documents \
-&& ln -s /mnt/gdrive/keepass/ ~/keepass \
-&& ln -s /mnt/gdrive/videos/ ~/videos \
 && sudo -v \
 && echo -e "\n$(tput setaf 2)rclone installed\n$(tput sgr0)" \
 && sleep 3 \
