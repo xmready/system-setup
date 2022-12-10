@@ -7,10 +7,12 @@ After=network-online.target
 Type=notify
 Restart=on-failure
 RestartSec=5
+User=
+Group=
 ExecStart=/usr/bin/rclone mount vault: /mnt/vault \
   --vfs-cache-mode full \
   --dir-perms 700 \
   --file-perms 600
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target

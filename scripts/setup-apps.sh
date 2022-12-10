@@ -3,10 +3,12 @@
 # apt  and flatpak system setup
 
 RCLONEDEB=https://downloads.rclone.org/rclone-current-linux-amd64.deb
-GDRIVEUNIT=~/.config/systemd/user/mnt-gdrive.service
-CRYPTUNIT=~/.config/systemd/user/mnt-gdrive-crypt.service
+GDRIVEUNIT=/lib/systemd/system/mnt-gdrive.service
+CRYPTUNIT=/lib/systemd/system/mnt-gdrive-crypt.service
+NMSCRIPT=/etc/NetworkManager/dispatcher.d/90-ifconnected
 GDRIVEURL=https://raw.githubusercontent.com/xmready/system-setup/main/configs/mnt-gdrive.service
 CRYPTURL=https://raw.githubusercontent.com/xmready/system-setup/main/configs/mnt-gdrive-crypt.service
+NMURL=https://raw.githubusercontent.com/xmready/system-setup/main/configs/90-ifconnected
 FLATHUBURL=https://flathub.org/repo/flathub.flatpakrepo
 
 echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
@@ -33,10 +35,11 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && sudo apt install -y /tmp/rclone.deb \
 && sudo mkdir -p /mnt/gdrive /mnt/vault \
 && sudo chown "$USER":"$USER" /mnt/gdrive /mnt/vault \
-&& mkdir -p ~/.config/rclone ~/.config/systemd/user \
-&& curl -fsSLo "$GDRIVEUNIT" "$GDRIVEURL" \
-&& curl -fsSLo "$CRYPTUNIT" "$CRYPTURL" \
-&& sudo -v \
+&& mkdir -p ~/.config/rclone \
+&& sudo curl -fLo "$GDRIVEUNIT" "$GDRIVEURL" \
+&& sudo curl -fLo "$CRYPTUNIT" "$CRYPTURL" \
+&& sudo curl -fLo "$NMSCRIPT" "$NMURL" \
+&& sudo chmod 755 /etc/NetworkManager/dispatcher.d/* \
 && echo -e "\n$(tput setaf 2)rclone installed\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)adding flathub repo\n$(tput sgr0)" \
