@@ -38,6 +38,8 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && mkdir -p ~/.config/rclone \
 && sudo curl -fLo "$GDRIVEUNIT" "$GDRIVEURL" \
 && sudo curl -fLo "$CRYPTUNIT" "$CRYPTURL" \
+&& sudo sed -i s/^User=*/User="$USER"/ "$GDRIVEUNIT" \
+&& sudo sed -i s/^Group=*/Group="$USER"/ "$CRYPTUNIT" \
 && sudo curl -fLo "$NMSCRIPT" "$NMURL" \
 && sudo chmod 755 /etc/NetworkManager/dispatcher.d/* \
 && echo -e "\n$(tput setaf 2)rclone installed\n$(tput sgr0)" \
