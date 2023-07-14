@@ -26,7 +26,7 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 3)installing packages\n$(tput sgr0)" \
 && sudo apt install -y \
   bash-completion build-essential checkinstall curl figlet \
-  flatpak fzf git gnome-software-plugin-flatpak gnupg keepassxc \
+  flatpak fzf git gnome-software-plugin-flatpak gnupg \
   lm-sensors lxc neofetch nmap qrencode rename rsync ssh-audit \
   ufw xclip \
 && echo -e "\n$(tput setaf 2)packages installed\n$(tput sgr0)" \
@@ -61,4 +61,5 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
   com.github.tchx84.Flatseal im.riot.Riot com.github.flxzt.rnote \
   org.electrum.electrum tv.plex.PlexDesktop org.chromium.Chromium \
   ch.protonmail.protonmail-bridge org.mozilla.Thunderbird \
+  org.keepassxc.KeePassXC \
 && echo -e "\n$(tput setaf 2)flatpaks installed\n$(tput sgr0)"
