@@ -2,6 +2,8 @@
 
 # .bashrc customization
 
+TOPRCURL=https://raw.githubusercontent.com/xmready/system-setup/main/configs/toprc
+
 echo -e "\n$(tput setaf 3)customizing bashrc\n$(tput sgr0)" \
 && echo -e "\n"'alias la="ls -a"' >> ~/.bashrc \
 && echo -e 'alias ll="ls -alh"' >> ~/.bashrc \
@@ -15,4 +17,8 @@ echo -e "\n$(tput setaf 3)customizing bashrc\n$(tput sgr0)" \
   >> ~/.bashrc \
 && sed -i 's/^HISTSIZE.*/HISTSIZE=10000/' ~/.bashrc \
 && sed -i 's/^HISTFILESIZE.*/HISTFILESIZE=20000/' ~/.bashrc \
-&& echo -e "\n$(tput setaf 2)bashrc customized\n$(tput sgr0)"
+&& echo -e "\n$(tput setaf 2)bashrc customized\n$(tput sgr0)" \
+&& sleep 5 \
+&& echo -e "\n$(tput setaf 3)configuring top\n$(tput sgr0)" \
+&& curl -fLo ~/.config/procps/toprc --create-dirs "$TOPRCURL" \
+&& echo -e "\n$(tput setaf 2)top configured\n$(tput sgr0)"
