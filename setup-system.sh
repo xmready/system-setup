@@ -15,7 +15,7 @@ SETUPVIM=https://raw.githubusercontent.com/xmready/vim-config/main/setup-vim.sh
 CLEANAPT=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/clean-apt.sh
 SETUPCOMMANDS=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-commands.sh
 HARDENNETWORK=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/harden-network.sh
-SETUPBASH=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-bash.sh
+SETUPSHELL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-shell.sh
 
 wget --quiet -O- "$SETUPAPPS" | bash - \
 && sleep 3 \
@@ -29,7 +29,7 @@ wget --quiet -O- "$SETUPAPPS" | bash - \
 && sleep 3 \
 && curl -fsSL "$HARDENNETWORK" | bash - \
 && sleep 3 \
-&& curl -fsSL "$SETUPBASH" | bash - \
+&& curl -fsSL "$SETUPSHELL" | bash - \
 && sleep 3 \
 && echo -e \
   "\n$(tput setaf 1)$(tput bold)SYSTEM WILL REBOOT IN 60 SECONDS\n$(tput sgr0)$(tput bel)" \

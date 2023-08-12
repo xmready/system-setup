@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-# apt  and flatpak system setup
+# apt & flatpak setup
 
 RCLONEDEB=https://downloads.rclone.org/rclone-current-linux-amd64.deb
 GDRIVEUNIT=/lib/systemd/system/mnt-gdrive.service
