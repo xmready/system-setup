@@ -25,10 +25,28 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && sudo -v \
 && echo -e "\n$(tput setaf 3)installing packages\n$(tput sgr0)" \
 && sudo apt install -y \
-  bash-completion build-essential checkinstall curl figlet \
-  flatpak fzf git gnome-software-plugin-flatpak gnupg \
-  lm-sensors lxc neofetch nmap qrencode rename rsync ssh-audit \
-  ufw xclip \
+  bash-completion \
+  build-essential \
+  checkinstall \
+  curl \
+  figlet \
+  flatpak \
+  fzf \
+  git \
+  gnome-software-plugin-flatpak \
+  gnupg \
+  lm-sensors \
+  lxc \
+  neofetch \
+  nmap \
+  pipx \
+  python3-pip \
+  python3-venv \
+  qrencode \
+  rename \
+  rsync \
+  ssh-audit \
+  ufw \
 && echo -e "\n$(tput setaf 2)packages installed\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 3)installing rclone\n$(tput sgr0)" \
 && curl -fLo /tmp/rclone.deb "$RCLONEDEB" \
@@ -52,14 +70,28 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)installing flatpaks\n$(tput sgr0)" \
 && flatpak install -y flathub \
-  org.gimp.GIMP im.pidgin.Pidgin org.gnucash.GnuCash \
-  org.videolan.VLC org.inkscape.Inkscape org.kde.kdenlive \
-  org.blender.Blender org.qbittorrent.qBittorrent \
-  org.audacityteam.Audacity org.libreoffice.LibreOffice \
-  tv.kodi.Kodi org.mozilla.firefox com.jetbrains.WebStorm \
-  org.telegram.desktop org.signal.Signal org.kde.kleopatra \
-  com.github.tchx84.Flatseal im.riot.Riot com.github.flxzt.rnote \
-  org.electrum.electrum tv.plex.PlexDesktop org.chromium.Chromium \
-  ch.protonmail.protonmail-bridge org.mozilla.Thunderbird \
+  ch.protonmail.protonmail-bridge \
+  com.github.flxzt.rnote \
+  com.github.tchx84.Flatseal \
+  com.jetbrains.WebStorm \
+  im.pidgin.Pidgin \
+  im.riot.Riot \
+  org.audacityteam.Audacity \
+  org.blender.Blender \
+  org.chromium.Chromium \
+  org.electrum.electrum \
+  org.gimp.GIMP \
+  org.gnucash.GnuCash \
+  org.inkscape.Inkscape \
+  org.kde.kdenlive \
   org.keepassxc.KeePassXC \
+  org.libreoffice.LibreOffice \
+  org.mozilla.Thunderbird \
+  org.mozilla.firefox \
+  org.qbittorrent.qBittorrent \
+  org.signal.Signal org.kde.kleopatra \
+  org.telegram.desktop \
+  org.videolan.VLC \
+  tv.kodi.Kodi \
+  tv.plex.PlexDesktop \
 && echo -e "\n$(tput setaf 2)flatpaks installed\n$(tput sgr0)"
