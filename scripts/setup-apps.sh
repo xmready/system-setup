@@ -31,17 +31,20 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
   curl \
   figlet \
   flatpak \
+  fprintd \
   fzf \
   git \
   gnome-software-plugin-flatpak \
   gnupg \
+  libpam-fprintd \
   lm-sensors \
   lxc \
   neofetch \
+  network-manager-openvpn-gnome \
   nmap \
+  openvpn \
   pipx \
   python3-pip \
-  python3-venv \
   qrencode \
   rename \
   rsync \
