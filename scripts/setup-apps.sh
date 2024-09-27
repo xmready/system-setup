@@ -73,28 +73,18 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)installing flatpaks\n$(tput sgr0)" \
 && flatpak install -y flathub \
-  ch.protonmail.protonmail-bridge \
   com.github.flxzt.rnote \
   com.github.tchx84.Flatseal \
-  com.jetbrains.WebStorm \
-  im.pidgin.Pidgin \
-  im.riot.Riot \
-  org.audacityteam.Audacity \
-  org.blender.Blender \
-  org.chromium.Chromium \
-  org.electrum.electrum \
+  io.github.ungoogled_software.ungoogled_chromium \
+  io.gitlab.librewolf-community \
   org.gimp.GIMP \
   org.gnucash.GnuCash \
-  org.inkscape.Inkscape \
   org.kde.kdenlive \
+  org.kde.kleopatra \
   org.keepassxc.KeePassXC \
   org.libreoffice.LibreOffice \
   org.mozilla.Thunderbird \
-  org.mozilla.firefox \
   org.qbittorrent.qBittorrent \
-  org.signal.Signal org.kde.kleopatra \
-  org.telegram.desktop \
-  org.videolan.VLC \
   tv.kodi.Kodi \
   tv.plex.PlexDesktop \
 && echo -e "\n$(tput setaf 2)flatpaks installed\n$(tput sgr0)"
