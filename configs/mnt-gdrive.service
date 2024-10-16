@@ -10,6 +10,7 @@ RestartSec=5
 User=
 Group=
 ExecStart=/usr/bin/rclone mount gdrive: /mnt/gdrive --vfs-cache-mode full
+ExecStop=/usr/bin/fuser -Mk -SIGTERM -m "/mnt/gdrive"
 
 [Install]
 WantedBy=multi-user.target

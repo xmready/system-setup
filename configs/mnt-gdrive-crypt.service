@@ -13,6 +13,7 @@ ExecStart=/usr/bin/rclone mount vault: /mnt/vault \
   --vfs-cache-mode full \
   --dir-perms 700 \
   --file-perms 600
+ExecStop=/usr/bin/fuser -Mk -SIGTERM -m "/mnt/vault"
 
 [Install]
 WantedBy=multi-user.target
