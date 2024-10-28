@@ -1,9 +1,16 @@
 #!/usr/bin/bash
 
-# Tor repository configuration and installation
+# Discussion, issues and change requests at:
+#   https://github.com/xmready/system-setup
+#
+# Purpose:
+#   A script to install and configure tor
+#
+# Non-root usage:
+#   curl -fL https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-tor.sh | bash -
 
 PGPURL=https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc
-KEYRING=/usr/share/keyrings/tor-archive-keyring.gpg
+KEYRING=/usr/share/keyrings/deb.torproject.org-keyring.gpg
 ARCH="$(dpkg --print-architecture)"
 REPOURL=https://deb.torproject.org/torproject.org
 DISTRO="$(lsb_release -s -c)"
@@ -20,8 +27,8 @@ echo -e "\n$(tput setaf 3)adding Tor repo\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 2)Tor repo added\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)installing Tor\n$(tput sgr0)" \
-&& sudo apt update \
-&& sudo apt install -y tor deb.torproject.org-keyring \
+&& sudo apt-get update \
+&& sudo apt-get install tor deb.torproject.org-keyring \
 && echo -e "\n$(tput setaf 2)Tor installed\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)disabling tor.service\n$(tput sgr0)" \
