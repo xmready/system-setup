@@ -1,6 +1,13 @@
 #!/usr/bin/bash
 
-# .bashrc customization
+# Discussion, issues and change requests at:
+#   https://github.com/xmready/system-setup
+#
+# Purpose:
+#   A script to configure .bashrc for the current user
+#
+# Non-root usage:
+#   curl -fL https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-shell.sh | bash -
 
 TOPRCURL=https://raw.githubusercontent.com/xmready/system-setup/main/configs/toprc
 

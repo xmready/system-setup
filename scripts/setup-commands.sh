@@ -1,6 +1,13 @@
 #!/usr/bin/bash
 
-# install custom commands in /usr/local/bin
+# Discussion, issues and change requests at:
+#   https://github.com/xmready/system-setup
+#
+# Purpose:
+#   A script to install custom commands globally for all users
+#
+# Non-root usage:
+#   curl -fL https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-commands.sh | bash -
 
 AUTOUPGRADE=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/autoupgrade.sh
 DECRYPTCLIP=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/decryptclip.sh

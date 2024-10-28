@@ -1,6 +1,13 @@
 #!/usr/bin/bash
 
-# install custom server commands in /usr/local/bin
+# Discussion, issues and change requests at:
+#   https://github.com/xmready/system-setup
+#
+# Purpose:
+#   A script to install custom server commands globally for all users
+#
+# Non-root usage:
+#   curl -fL https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-server-commands.sh | bash -
 
 AUTOUPGRADE=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/autoupgrade.sh
 TEMPS=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/temps.sh

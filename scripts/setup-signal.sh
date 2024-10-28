@@ -1,6 +1,13 @@
 #!/usr/bin/bash
 
-# Signal repository configuration and installation
+# Discussion, issues and change requests at:
+#   https://github.com/xmready/system-setup
+#
+# Purpose:
+#   A script to setup the Signal messenger repo and install the latest version
+#
+# Non-root usage:
+#   curl -fL https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-signal.sh | bash -
 
 PGPURL=https://updates.signal.org/desktop/apt/keys.asc
 KEYRING=/usr/share/keyrings/signal-desktop-keyring.gpg

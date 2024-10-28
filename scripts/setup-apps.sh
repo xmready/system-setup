@@ -1,6 +1,13 @@
 #!/usr/bin/bash
 
-# apt & flatpak setup
+# Discussion, issues and change requests at:
+#   https://github.com/xmready/system-setup
+#
+# Purpose:
+#   A script to install and configure packages with apt
+#
+# Non-root usage:
+#   wget -O- https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-apps.sh | bash -
 
 RCLONEDEB=https://downloads.rclone.org/rclone-current-linux-amd64.deb
 GDRIVEUNIT=/lib/systemd/system/mnt-gdrive.service
@@ -18,13 +25,13 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 2)sources list cleaned\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)upgrading packages\n$(tput sgr0)" \
-&& sudo apt update \
-&& sudo apt upgrade -y \
+&& sudo apt-get update \
+&& sudo apt-get upgrade \
 && echo -e "\n$(tput setaf 2)packages upgraded\n$(tput sgr0)" \
 && sleep 3 \
 && sudo -v \
 && echo -e "\n$(tput setaf 3)installing packages\n$(tput sgr0)" \
-&& sudo apt install -y \
+&& sudo apt-get install \
   bash-completion \
   build-essential \
   checkinstall \
@@ -53,7 +60,7 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 2)packages installed\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 3)installing rclone\n$(tput sgr0)" \
 && curl -fLo /tmp/rclone.deb "$RCLONEDEB" \
-&& sudo apt install -y /tmp/rclone.deb \
+&& sudo apt-get install /tmp/rclone.deb \
 && sudo mkdir -p /mnt/gdrive /mnt/vault \
 && sudo chown "$USER":"$USER" /mnt/gdrive /mnt/vault \
 && mkdir -p ~/.config/rclone \
@@ -72,7 +79,7 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 2)flathub repo added\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)installing flatpaks\n$(tput sgr0)" \
-&& flatpak install -y flathub \
+&& flatpak install flathub \
   com.github.flxzt.rnote \
   com.github.tchx84.Flatseal \
   io.github.ungoogled_software.ungoogled_chromium \
