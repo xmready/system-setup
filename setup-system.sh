@@ -18,7 +18,9 @@ SETUP_COMMANDS=https://raw.githubusercontent.com/xmready/system-setup/main/scrip
 HARDEN_NETWORK=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/harden-network.sh
 SETUP_SHELL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-shell.sh
 
-wget --quiet -O- "$SETUP_APPS" | bash - \
+wget --quiet -O- "$SETUP_SHELL" | bash - \
+&& sleep 3 \
+&& curl -fsSL "$SETUP_APPS" | bash - \
 && sleep 3 \
 && curl -fsSL "$SETUP_TOR" | bash - \
 && sleep 3 \
@@ -31,8 +33,6 @@ wget --quiet -O- "$SETUP_APPS" | bash - \
 && curl -fsSL "$SETUP_COMMANDS" | bash - \
 && sleep 3 \
 && curl -fsSL "$HARDEN_NETWORK" | bash - \
-&& sleep 3 \
-&& curl -fsSL "$SETUP_SHELL" | bash - \
 && sleep 3 \
 && echo -e \
   "\n$(tput setaf 1)$(tput bold)SYSTEM WILL REBOOT IN 60 SECONDS\n$(tput sgr0)$(tput bel)" \
