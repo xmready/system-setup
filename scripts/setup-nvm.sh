@@ -25,8 +25,8 @@ echo -e "\n$(tput setaf 3)installing nvm\n$(tput sgr0)" \
 && echo -e "\n" >> ~/.bashrc \
 && curl -fL "$NVM_AUTO_URL" >> ~/.bashrc \
 && source ~/.bashrc \
-&& nvm install lts/* \
-&& nvm alias default lts/* \
+&& nvm install node \
+&& nvm alias default node \
 && node -v \
 && npm -v \
 && echo -e "\n$(tput setaf 2)nvm installed\n$(tput sgr0)"
