@@ -13,6 +13,7 @@ SETUP_APPS=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/s
 SETUP_TOR=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-tor.sh
 SETUP_NVM=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-nvm.sh
 SETUP_VIM=https://raw.githubusercontent.com/xmready/vim-config/main/setup-vim.sh
+SETUP_SIGNAL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-signal.sh
 CLEAN_APT=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/clean-apt.sh
 SETUP_COMMANDS=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-commands.sh
 HARDEN_NETWORK=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/harden-network.sh
@@ -27,6 +28,8 @@ wget --quiet -O- "$SETUP_SHELL" | bash - \
 && curl -fsSL "$SETUP_NVM" | bash - \
 && sleep 3 \
 && curl -fsSL "$SETUP_VIM" | bash - \
+&& sleep 3 \
+&& curl -fsSL "$SETUP_SIGNAL" | bash - \
 && sleep 3 \
 && curl -fsSL "$CLEAN_APT" | bash - \
 && sleep 3 \
