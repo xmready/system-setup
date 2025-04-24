@@ -21,9 +21,10 @@ NVM_AUTO_URL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts
 
 echo -e "\n$(tput setaf 3)installing nvm\n$(tput sgr0)" \
 && curl -fL "$NVM_URL" | bash \
+&& export NVM_DIR="$HOME/.nvm" \
+&& [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
 && echo -e "\n" >> ~/.bashrc \
 && curl -fL "$NVM_AUTO_URL" >> ~/.bashrc \
-&& source ~/.bashrc \
 && nvm install node \
 && nvm alias default node \
 && node -v \
