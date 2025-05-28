@@ -10,7 +10,7 @@
 #   wget -O- https://raw.githubusercontent.com/xmready/system-setup/main/setup-system.sh | bash -
 
 SETUP_SHELL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-shell.sh
-SETUP_APPS=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-apps.sh
+SETUP_APT=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-apt.sh
 SETUP_TOR=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-tor.sh
 SETUP_NVM=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-nvm.sh
 SETUP_VIM=https://raw.githubusercontent.com/xmready/vim-config/main/setup-vim.sh
@@ -23,7 +23,7 @@ HARDEN_NETWORK=https://raw.githubusercontent.com/xmready/system-setup/main/scrip
 
 wget -O- "$SETUP_SHELL" | bash - \
 && sleep 3 \
-&& wget -O- "$SETUP_APPS" | bash - \
+&& wget -O- "$SETUP_APT" | bash - \
 && sleep 3 \
 && wget -O- "$SETUP_TOR" | bash - \
 && sleep 3 \
