@@ -18,6 +18,7 @@ echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 3)upgrading packages\n$(tput sgr0)" \
 && sudo apt-get update \
 && sudo apt-get upgrade \
+&& sudo apt-get full-upgrade \
 && echo -e "\n$(tput setaf 2)packages upgraded\n$(tput sgr0)" \
 && sleep 3 \
 && sudo -v \
