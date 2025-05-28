@@ -7,7 +7,7 @@
 #   A script to install and configure packages with apt
 #
 # Non-root usage:
-#   wget -O- https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-apps.sh | bash -
+#   wget -O- https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-apt.sh | bash -
 
 echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
 && sudo sed -i '/#/d' /etc/apt/sources.list \
