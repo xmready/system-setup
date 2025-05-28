@@ -9,12 +9,12 @@
 # Non-root usage:
 #   wget --quiet -O- https://raw.githubusercontent.com/xmready/system-setup/main/setup-server.sh | bash -
 
+SETUP_SHELL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-server-shell.sh
 SETUP_APT=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-server-apt.sh
 SETUP_VIM=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-server-vim.sh
 CLEAN_APT=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/clean-apt.sh
 SETUP_COMMANDS=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-server-commands.sh
 HARDEN_NETWORK=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/harden-server-network.sh
-SETUP_SHELL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-server-shell.sh
 
 wget -O- "$SETUP_SHELL" | bash - \
 && sleep 3 \
