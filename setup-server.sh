@@ -14,9 +14,11 @@ SETUP_VIM=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/se
 CLEAN_APT=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/clean-apt.sh
 SETUP_COMMANDS=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-server-commands.sh
 HARDEN_NETWORK=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/harden-server-network.sh
-SETUP_BASH=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-server-bash.sh
+SETUP_SHELL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-server-shell.sh
 
-wget --quiet -O- "$SETUP_APT" | bash - \
+wget --quiet -O- "$SETUP_SHELL" | bash - \
+&& sleep 3 \
+&& curl -fsSL "$SETUP_APT" | bash - \
 && sleep 3 \
 && curl -fsSL "$SETUP_VIM" | bash - \
 && sleep 3 \
@@ -25,8 +27,6 @@ wget --quiet -O- "$SETUP_APT" | bash - \
 && curl -fsSL "$SETUP_COMMANDS" | bash - \
 && sleep 3 \
 && curl -fsSL "$HARDEN_NETWORK" | bash - \
-&& sleep 3 \
-&& curl -fsSL "$SETUP_BASH" | bash - \
 && sleep 3 \
 && echo -e \
   "\n$(tput setaf 1)$(tput bold)SYSTEM WILL REBOOT IN 60 SECONDS\n$(tput sgr0)$(tput bel)" \
