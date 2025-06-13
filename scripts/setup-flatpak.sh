@@ -18,7 +18,6 @@ echo -e "\n$(tput setaf 3)adding flathub repo\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 3)installing flatpaks\n$(tput sgr0)" \
 && flatpak install flathub \
   com.github.flxzt.rnote \
-  com.github.tchx84.Flatseal \
   io.github.ungoogled_software.ungoogled_chromium \
   org.gimp.GIMP \
   org.gnucash.GnuCash \
@@ -29,6 +28,5 @@ echo -e "\n$(tput setaf 3)adding flathub repo\n$(tput sgr0)" \
   org.mozilla.firefox \
   org.mozilla.Thunderbird \
   org.qbittorrent.qBittorrent \
-  tv.kodi.Kodi \
   tv.plex.PlexDesktop \
 && echo -e "\n$(tput setaf 2)flatpaks installed\n$(tput sgr0)"
