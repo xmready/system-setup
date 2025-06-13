@@ -20,13 +20,13 @@ echo -e "\n$(tput setaf 3)adding flathub repo\n$(tput sgr0)" \
   com.github.flxzt.rnote \
   com.github.tchx84.Flatseal \
   io.github.ungoogled_software.ungoogled_chromium \
-  io.gitlab.librewolf-community \
   org.gimp.GIMP \
   org.gnucash.GnuCash \
   org.kde.kdenlive \
   org.kde.kleopatra \
   org.keepassxc.KeePassXC \
   org.libreoffice.LibreOffice \
+  org.mozilla.firefox \
   org.mozilla.Thunderbird \
   org.qbittorrent.qBittorrent \
   tv.kodi.Kodi \
