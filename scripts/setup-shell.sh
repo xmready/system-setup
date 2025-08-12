@@ -11,8 +11,6 @@
 
 echo -e "\n$(tput setaf 3)customizing bashrc\n$(tput sgr0)" \
 && echo -e "\n"'stty -ixon' >> ~/.bashrc \
-&& echo -e "\n"'export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36"' \
-  >> ~/.bashrc \
 && echo -e "\n"'export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"' \
   >> ~/.bashrc \
 && echo \
