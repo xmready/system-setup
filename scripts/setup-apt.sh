@@ -43,4 +43,5 @@ echo -e "\n$(tput setaf 3)upgrading packages\n$(tput sgr0)" \
   rsync \
   ssh-audit \
   ufw \
+  wget \
 && echo -e "\n$(tput setaf 2)packages installed\n$(tput sgr0)"
