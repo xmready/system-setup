@@ -26,5 +26,6 @@ echo -e "\n$(tput setaf 3)adding Signal repo\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)installing Signal\n$(tput sgr0)" \
 && sudo apt-get update \
-&& sudo apt-get install signal-desktop \
+&& sleep 3 \
+&& sudo apt-get install -y signal-desktop \
 && echo -e "\n$(tput setaf 2)Signal installed\n$(tput sgr0)"
