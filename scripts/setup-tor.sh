@@ -12,7 +12,7 @@
 PGP_KEYS_URL=https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc
 KEYRING_PATH=/usr/share/keyrings/deb.torproject.org-keyring.gpg
 SOURCES_URL=https://raw.githubusercontent.com/xmready/system-setup/refs/heads/main/configs/tor.sources
-SOURCES_PATH=/etc/apt/sources.list.d/tor.list
+SOURCES_PATH=/etc/apt/sources.list.d/tor.sources
 DISTRO="$(lsb_release -s -c)"
 ARCH="$(dpkg --print-architecture)"
 
