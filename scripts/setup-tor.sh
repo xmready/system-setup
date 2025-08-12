@@ -28,7 +28,7 @@ echo -e "\n$(tput setaf 3)adding tor repo\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)installing tor\n$(tput sgr0)" \
 && sudo apt-get update \
-&& sudo apt-get install tor deb.torproject.org-keyring \
+&& sudo apt-get install -y tor deb.torproject.org-keyring \
 && echo -e "\n$(tput setaf 2)tor installed\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)disabling tor.service\n$(tput sgr0)" \
