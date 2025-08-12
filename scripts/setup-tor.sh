@@ -11,19 +11,19 @@
 
 PGP_KEYS_URL=https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc
 KEYRING_PATH=/usr/share/keyrings/deb.torproject.org-keyring.gpg
-ARCH="$(dpkg --print-architecture)"
-DEB_REPO_URL=https://deb.torproject.org/torproject.org
-DISTRO="$(lsb_release -s -c)"
+SOURCES_URL=https://raw.githubusercontent.com/xmready/system-setup/refs/heads/main/configs/tor.sources
 SOURCES_PATH=/etc/apt/sources.list.d/tor.list
+DISTRO="$(lsb_release -s -c)"
+ARCH="$(dpkg --print-architecture)"
 
 echo -e "\n$(tput setaf 3)adding tor repo\n$(tput sgr0)" \
 && curl -fL "$PGP_KEYS_URL" \
   | gpg --dearmor \
   | sudo tee "$KEYRING_PATH" > /dev/null \
-&& echo "deb [arch=$ARCH signed-by=$KEYRING_PATH] $DEB_REPO_URL $DISTRO main" \
-  | sudo tee "$SOURCES_PATH" \
-&& echo "deb-src [arch=$ARCH signed-by=$KEYRING_PATH] $DEB_REPO_URL $DISTRO main" \
-  | sudo tee -a "$SOURCES_PATH" \
+&& curl -fL "$SOURCES_URL" \
+  | sed s/distribution/"$DISTRO"/ \
+  | sed s/architecture/"$ARCH"/ \
+  | sudo tee "$SOURCES_PATH" > /dev/null \
 && echo -e "\n$(tput setaf 2)tor repo added\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)installing tor\n$(tput sgr0)" \
