@@ -24,7 +24,6 @@ echo -e "\n$(tput setaf 3)adding flathub repo\n$(tput sgr0)" \
   org.kde.kdenlive \
   org.kde.kleopatra \
   org.keepassxc.KeePassXC \
-  org.libreoffice.LibreOffice \
   org.mozilla.firefox \
   org.mozilla.Thunderbird \
   org.qbittorrent.qBittorrent \
