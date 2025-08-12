@@ -19,7 +19,7 @@ NM_SCRIPT_URL=https://raw.githubusercontent.com/xmready/system-setup/main/config
 
 echo -e "\n$(tput setaf 3)installing rclone\n$(tput sgr0)" \
 && curl -fLo /tmp/rclone.deb "$RCLONE_DEB_URL" \
-&& sudo apt-get install /tmp/rclone.deb \
+&& sudo apt-get install -y /tmp/rclone.deb \
 && sudo mkdir -p /mnt/gdrive /mnt/vault \
 && sudo chown "$USER":"$USER" /mnt/gdrive /mnt/vault \
 && mkdir -p ~/.config/rclone \
