@@ -9,13 +9,7 @@
 # Non-root usage:
 #   wget -O- https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-apt.sh | bash -
 
-echo -e "\n$(tput setaf 3)cleaning sources list\n$(tput sgr0)" \
-&& sudo sed -i '/#/d' /etc/apt/sources.list \
-&& sudo sed -i '/^$/d' /etc/apt/sources.list \
-&& cat /etc/apt/sources.list \
-&& echo -e "\n$(tput setaf 2)sources list cleaned\n$(tput sgr0)" \
-&& sleep 3 \
-&& echo -e "\n$(tput setaf 3)upgrading packages\n$(tput sgr0)" \
+echo -e "\n$(tput setaf 3)upgrading packages\n$(tput sgr0)" \
 && sudo apt-get update \
 && sudo apt-get upgrade \
 && sudo apt-get full-upgrade \
