@@ -21,27 +21,27 @@ SETUP_FLATPAK=https://raw.githubusercontent.com/xmready/system-setup/main/script
 SETUP_COMMANDS=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-commands.sh
 HARDEN_NETWORK=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/harden-network.sh
 
-wget -O- "$SETUP_SHELL" | bash - \
+curl -fL "$SETUP_SHELL" | bash - \
 && sleep 3 \
-&& wget -O- "$SETUP_APT" | bash - \
+&& curl -fL "$SETUP_APT" | bash - \
 && sleep 3 \
-&& wget -O- "$SETUP_TOR" | bash - \
+&& curl -fL "$SETUP_TOR" | bash - \
 && sleep 3 \
-&& wget -O- "$SETUP_SIGNAL" | bash - \
+&& curl -fL "$SETUP_SIGNAL" | bash - \
 && sleep 3 \
-&& wget -O- "$SETUP_NVM" | bash - \
+&& curl -fL "$SETUP_NVM" | bash - \
 && sleep 3 \
-&& wget -O- "$SETUP_VIM" | bash - \
+&& curl -fL "$SETUP_VIM" | bash - \
 && sleep 3 \
-&& wget -O- "$SETUP_RCLONE" | bash - \
+&& curl -fL "$SETUP_RCLONE" | bash - \
 && sleep 3 \
-&& wget -O- "$CLEAN_APT" | bash - \
+&& curl -fL "$CLEAN_APT" | bash - \
 && sleep 3 \
-&& wget -O- "$SETUP_FLATPAK" | bash - \
+&& curl -fL "$SETUP_FLATPAK" | bash - \
 && sleep 3 \
-&& wget -O- "$SETUP_COMMANDS" | bash - \
+&& curl -fL "$SETUP_COMMANDS" | bash - \
 && sleep 3 \
-&& wget -O- "$HARDEN_NETWORK" | bash - \
+&& curl -fL "$HARDEN_NETWORK" | bash - \
 && sleep 3 \
 && echo -e \
   "\n$(tput setaf 1)$(tput bold)SYSTEM WILL REBOOT IN 60 SECONDS\n$(tput sgr0)$(tput bel)" \
