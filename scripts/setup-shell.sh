@@ -10,7 +10,8 @@
 #   curl -fL https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-shell.sh | bash -
 
 echo -e "\n$(tput setaf 3)customizing bashrc\n$(tput sgr0)" \
-&& echo -e "\n"'stty -ixon' >> ~/.bashrc \
+&& echo -e "\n"'stty -ixon' \
+  >> ~/.bashrc \
 && echo -e "\n"'export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"' \
   >> ~/.bashrc \
 && echo \
