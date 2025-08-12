@@ -19,7 +19,7 @@ echo -e "\n$(tput setaf 3)adding Signal repo\n$(tput sgr0)" \
 && curl -fL "$PGP_KEYS_URL" \
   | gpg --dearmor \
   | sudo tee "$KEYRING_PATH" > /dev/null \
-&& curl -fLo "$SOURCES_URL" \
+&& curl -fL "$SOURCES_URL" \
   | sed s/architecture/"$ARCH"/ \
   | sudo tee "$SOURCES_PATH" > /dev/null \
 && echo -e "\n$(tput setaf 2)Signal repo added\n$(tput sgr0)" \
