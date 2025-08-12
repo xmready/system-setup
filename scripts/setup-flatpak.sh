@@ -16,7 +16,7 @@ echo -e "\n$(tput setaf 3)adding flathub repo\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 2)flathub repo added\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)installing flatpaks\n$(tput sgr0)" \
-&& flatpak install flathub \
+&& flatpak install -y flathub \
   com.github.flxzt.rnote \
   io.github.ungoogled_software.ungoogled_chromium \
   org.gimp.GIMP \
