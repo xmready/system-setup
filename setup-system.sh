@@ -9,8 +9,8 @@
 # Non-root usage:
 #   wget -O- https://raw.githubusercontent.com/xmready/system-setup/main/setup-system.sh | bash -
 
-SETUP_SHELL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-shell.sh
 SETUP_APT=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-apt.sh
+SETUP_SHELL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-shell.sh
 SETUP_TOR=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-tor.sh
 SETUP_SIGNAL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-signal.sh
 SETUP_NVM=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-nvm.sh
@@ -21,9 +21,9 @@ SETUP_FLATPAK=https://raw.githubusercontent.com/xmready/system-setup/main/script
 SETUP_COMMANDS=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-commands.sh
 HARDEN_NETWORK=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/harden-network.sh
 
-curl -fL "$SETUP_SHELL" | bash - \
+curl -fL "$SETUP_APT" | bash - \
 && sleep 3 \
-&& curl -fL "$SETUP_APT" | bash - \
+&& curl -fL "$SETUP_SHELL" | bash - \
 && sleep 3 \
 && curl -fL "$SETUP_TOR" | bash - \
 && sleep 3 \
