@@ -12,10 +12,10 @@
 SETUP_SHELL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-shell.sh
 SETUP_APT=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-apt.sh
 SETUP_TOR=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-tor.sh
+SETUP_SIGNAL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-signal.sh
 SETUP_NVM=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-nvm.sh
 SETUP_VIM=https://raw.githubusercontent.com/xmready/vim-config/main/setup-vim.sh
 SETUP_RCLONE=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-rclone.sh
-SETUP_SIGNAL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-signal.sh
 CLEAN_APT=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/clean-apt.sh
 SETUP_FLATPAK=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-flatpak.sh
 SETUP_COMMANDS=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/setup-commands.sh
