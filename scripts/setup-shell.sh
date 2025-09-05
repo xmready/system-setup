@@ -19,4 +19,5 @@ echo -e "\n$(tput setaf 3)customizing bashrc\n$(tput sgr0)" \
   >> ~/.bashrc \
 && sed -i 's/^HISTSIZE.*/HISTSIZE=10000/' ~/.bashrc \
 && sed -i 's/^HISTFILESIZE.*/HISTFILESIZE=20000/' ~/.bashrc \
+&& sudo pam-auth-update --enable fprintd \
 && echo -e "\n$(tput setaf 2)bashrc customized\n$(tput sgr0)"
