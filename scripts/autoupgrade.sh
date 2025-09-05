@@ -20,8 +20,8 @@ NVM_URL=https://raw.githubusercontent.com/nvm-sh/nvm/"$NVM_LATEST"/install.sh
 
 echo -e "\n$(tput setaf 3)upgrading apt\n$(tput sgr0)" \
 && sudo apt-get update \
-&& sudo apt-get upgrade \
-&& sudo apt-get full-upgrade \
+&& sudo apt-get upgrade -y \
+&& sudo apt-get full-upgrade -y \
 && echo -e "\n$(tput setaf 2)apt upgraded\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)upgrading rclone\n$(tput sgr0)" \
@@ -34,7 +34,7 @@ echo -e "\n$(tput setaf 3)upgrading apt\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 2)apt cleaned\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)upgrading flatpaks\n$(tput sgr0)" \
-&& flatpak update \
+&& flatpak update -y \
 && echo -e "\n$(tput setaf 2)flatpaks upgraded\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)upgrading nvm\n$(tput sgr0)" \
