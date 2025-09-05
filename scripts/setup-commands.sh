@@ -13,14 +13,14 @@ AUTO_UPGRADE_URL=https://raw.githubusercontent.com/xmready/system-setup/main/scr
 DECRYPT_CLIP_URL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/decryptclip.sh
 IMPORT_PGP_URL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/importpgp.sh
 TEMPS_URL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/temps.sh
-WHATS_MY_IP_URL=https://raw.githubusercontent.com/xmready/system-setup/main/scripts/whatsmyip.sh
+DNS_LEAK_TEST_URL=https://raw.githubusercontent.com/macvk/dnsleaktest/refs/heads/master/dnsleaktest.sh
 
 echo -e "\n$(tput setaf 3)installing custom commands\n$(tput sgr0)" \
 && sudo curl -fLo /usr/local/bin/autoupgrade "$AUTO_UPGRADE_URL" \
 && sudo curl -fLo /usr/local/bin/decryptclip "$DECRYPT_CLIP_URL" \
 && sudo curl -fLo /usr/local/bin/importpgp "$IMPORT_PGP_URL" \
 && sudo curl -fLo /usr/local/bin/temps "$TEMPS_URL" \
-&& sudo curl -fLo /usr/local/bin/whatsmyip "$WHATS_MY_IP_URL" \
+&& sudo curl -fLo /usr/local/bin/dnsleaktest "$DNS_LEAK_TEST_URL" \
 && sudo chmod +x /usr/local/bin/* \
 && sudo -v \
 && echo -e "\n$(tput setaf 2)custom commands installed\n$(tput sgr0)"
