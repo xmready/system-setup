@@ -34,6 +34,8 @@ echo -e "\n$(tput setaf 3)installing rclone\n$(tput sgr0)" \
 && echo -e "\n$(tput setaf 2)rclone installed\n$(tput sgr0)" \
 && sleep 3 \
 && echo -e "\n$(tput setaf 3)creating rclone sym links\n$(tput sgr0)" \
+&& ln -s /mnt/gdrive ~/gdrive \
+&& ln -s /mnt/vault ~/vault \
 && ln -s /mnt/vault/configs/.bash_aliases ~/.bash_aliases \
 && ln -s /mnt/vault/configs/.gitconfig ~/.gitconfig \
 && ln -s /mnt/vault/configs/.gitignore_global ~/.gitignore_global \
